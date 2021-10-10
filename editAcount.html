@@ -25,8 +25,7 @@
       height: 100vh;
       display: grid;
       place-items: center;
-    }
-    
+    }  
     .form_container {
       display: grid;
       grid-template-rows: auto 1fr auto;
@@ -43,19 +42,10 @@
         font-weight: bold;
         margin-bottom:4px;
     }
-    .input {
-        background-color:var(--text-input-field);
-        border:none;
-        border-radius: 8px;
-        height:32px;
+    .value{
+        color:var(--very-light-pink);
         font-size: var(--md);
-        padding:6px;
-        margin-bottom:6px;
-    }
-    .input__name,
-    .input__email,
-    .input__password{
-        margin-bottom:22px;
+        margin:8px 0px 32px 0px;
     }
     .form {
         display:flex;
@@ -73,23 +63,20 @@
         margin-bottom: 54px;
         margin-top:18px;
     }
-    .primary_button {
-      background-color: var(--hospital-green);
+    .secundary_button {  
+      background-color: var(--white);
       border-radius: 8px;
-      border: none;
-      color: var(--white);
+      border: 1px solid var(--hospital-green);
+      color: var(--hospital-green);
       width: 100%;
       cursor: pointer;
       font-size: var(--md);
       font-weight: bold;
       height: 50px;
       text-align: center;
+      text-decoration: none;
+      padding-top:6px;
     }
-    .login_button {
-      margin-top: 14px;
-      margin-bottom: 30px;
-    } 
-
     </style>
 </head>
 <body>
@@ -100,17 +87,18 @@
                 <div>
                     <!-- user -->
                     <label for="name" class="label"> Name </label>
-                    <input type="text" class="input input__name" id="name" placeholder="Avocato" required>
+                    <P class="valeu"> bruno cocco
+                    </P>
                         <!-- nueva email -->
                     <label for="email" class="label"> Email </label>
-                    <input type="text" class="input input__email" id="email" placeholder="email@email.com" required>
+                    <P class="valeu">brunoe.cocco@gmail.com </P>
                         <!-- Password -->
                     <label for="new-password" class="label"> password </label>
-                    <input type="password" class="input input__password" id="new-password" placeholder="*********" required>
+                    <P class="valeu">  ********** </P>
                 </div>
                 <div>
                     <!-- submit -->
-                    <input type="submit" value="Create" class="primary_button login_button">
+                    <input type="submit" value="Edit" class="secundary_button login_button">
                 </div>
             </form>
         </div>
