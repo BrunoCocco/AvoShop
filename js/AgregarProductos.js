@@ -2,10 +2,12 @@
 const PRODUCTOS = [];
 
 /* Constructor de Objetos */
-function Item(nombre,precio,description){
-    this.name = nombre;
-    this.price = precio;
-    this.descrip = description;
+class Item {
+    constructor(nombre, precio, description) {
+        this.name = nombre;
+        this.price = precio;
+        this.descrip = description;
+    }
 }
 
 /*Tomando Productos desde la pagina */
@@ -21,8 +23,13 @@ const MOSTRAR = () => {
     console.log(newItem)
     /*pusheamos al array en forma de objeto */
     PRODUCTOS.push(newItem)
+    /*corre la funcion storage */
+    storage(PRODUCTOS)
     console.log(PRODUCTOS)
 }
 botonAddItem.addEventListener("click",MOSTRAR)
 
-/**/
+/*Aqui Agrego datos al storage */
+function storage(){
+localStorage.setItem("datos", JSON.stringify(PRODUCTOS));
+}
