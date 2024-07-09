@@ -1,55 +1,43 @@
 const COMPRA = []
 
-/*funcion para chequiar storage */
-function checkStorage(){
-    const datosStorage = localStorage.getItem('datos');
-    /*parseo los datos del navegador */
+function checkStorage() {
+    const datosStorage = localStorage.getItem('carrito');
     let datosparseados = JSON.parse(datosStorage)
-    /*pusheo los datos al navegador */
-    COMPRA.push(datosparseados)
+    console.log(datosparseados)
+    COMPRA.push(...datosparseados)
 }
 
-/*traigo los datos del navegador */
 checkStorage();
-
-/*muestro el array de COMPRA */
 console.log(COMPRA)
 
+let mostrarCarro = document.getElementById("mostrarCarrito")
 
-let peras = document.getElementById("peras");
-let manzana = document.getElementById("manzana");
-let palta = document.getElementById("palta");
+const printCarrito = () => {
 
-const agregarPera = () => {
-    console.log("se agrego al carrito")
-    let pera = {
-        nombre: "pera",
-        precio: "2"
-    }
-    COMPRA.push(pera)
-    console.log(COMPRA)
-}
-const agregarManz = () => {
-    console.log("se agrego al carrito")
-    let manzana = {
-        nombre: "manzana",
-        precio: "1"
-    }
-    COMPRA.push(manzana)
-    console.log(COMPRA)
-}
+    mostrarCarro.innerHTML = "";
 
-const agregarPalta = () => {
-    console.log("se agrego al carrito")
-    let palta = {
-        nombre: "palta",
-        precio: "5"
-    }
-    COMPRA.push(palta)
-    console.log(COMPRA)
+    let cantidadTotal = 0;
+    let precioTotal = 0;
+
+    COMPRA.forEach(item => {
+
+        cantidadTotal += item.cantidad;
+        precioTotal += item.precio * item.cantidad;
+
+        let muestra = `
+        <p> tienes "${item.nombre}" en tu carrito </p>
+        <p>Por un precio de "${item.precio}"</p>
+        `
+        mostrarCarro.innerHTML += muestra;
+        console.log(muestra)
+
+    })
+    let resumen = `
+    <h3 class"mt-5">Cantidad total de objetos: ${cantidadTotal}</h3>
+    <h2>Precio total: ${precioTotal}</h2>
+    `;
+    mostrarCarro.innerHTML += resumen;
+    console.log(resumen)
 }
 
-
-peras.addEventListener("click", agregarPera)
-manzana.addEventListener("click", agregarManz)
-palta.addEventListener("click", agregarPalta)
+printCarrito()
