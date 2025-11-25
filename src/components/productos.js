@@ -71,52 +71,5 @@ export const productos = [
     precio: 2.8,
     stock: 40,
   },
-  {
-    id: 13,
-    nombre: "Barra Energética Natural de Cacao",
-    precio: 1.9,
-    stock: 60,
-  },
-  {
-    id: 14,
-    nombre: "Harina Integral de Espelta 1kg",
-    precio: 3.6,
-    stock: 35,
-  },
-  {
-    id: 15,
-    nombre: "Aceite de Coco Virgen 400ml",
-    precio: 6.5,
-    stock: 22,
-  },
-  {
-    id: 16,
-    nombre: "Vinagre de Manzana Orgánico 500ml",
-    precio: 4.2,
-    stock: 28,
-  },
-  {
-    id: 17,
-    nombre: "Avena Instantánea sin Gluten 1kg",
-    precio: 3.8,
-    stock: 30,
-  },
-  {
-    id: 18,
-    nombre: "Pasta Integral de Trigo Duro 500g",
-    precio: 2.3,
-    stock: 45,
-  },
-  {
-    id: 19,
-    nombre: "Granola con Frutos Rojos 300g",
-    precio: 4.9,
-    stock: 26,
-  },
-  {
-    id: 20,
-    nombre: "Tostadas de Arroz Integral 150g",
-    precio: 2.1,
-    stock: 38,
-  },
+
 ];

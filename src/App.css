@@ -19,7 +19,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* evita scroll doble */
+  overflow: hidden;
+  /* evita scroll doble */
   background-color: var(--color-marfil);
   font-family: "Poppins", sans-serif;
 }
@@ -77,11 +78,13 @@ body {
 .main {
   margin-top: 25px;
   flex: 1;
-  overflow-y: auto; /* scroll solo acá */
+  overflow-y: auto;
+  /* scroll solo acá */
   padding: calc(var(--header-height) + 20px) 20px calc(var(--footer-height) + 20px);
   box-sizing: border-box;
   background-color: var(--color-marfil);
-  scroll-behavior: smooth; /* scroll suave */
+  scroll-behavior: smooth;
+  /* scroll suave */
 }
 
 /* ============================
@@ -91,57 +94,80 @@ body {
 .product-list {
   display: flex;
   flex-wrap: wrap;
+  /* 🔹 permite varias por fila */
   justify-content: center;
-  gap: 16px;
+  /* 🔹 centra las cards en la pantalla */
+  gap: 1.5rem;
+  /* 🔹 separación uniforme */
+  padding: 30px;
+  /* 🔹 espacio interior del contenedor */
 }
 
+/* Cada tarjeta */
 .product-card {
-  background-color: var(--color-aguacate);
+  display: flex;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px 16px;
+  width: 320px;
+  /* 🔹 tamaño fijo intermedio */
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+
+/* Imagen */
+.card-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  width: 25%;
-  height: 15%;
-  margin-bottom: 10px;
+  margin-right: 16px;
+}
+
+/* Info de texto */
+.card-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: var(--color-marfil);
+  align-items: flex-start;
+  flex: 1;
+  gap: 6px;
+}
+
+.card-info h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.precio {
+  color: #555;
   font-weight: 500;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
 }
 
-.product-card h4 {
+.stock {
   font-size: 0.9rem;
-  margin: 0;
-  text-align: center;
+  color: #777;
 }
 
-.product-card p {
-  font-size: 0.8rem;
-  margin: 0;
-}
-
+/* Botón */
 .boton {
-  background-color: #a67b5b; /* marrón claro semilla de aguacate */
+  background-color: #a0522d;
+  /* marrón tipo semilla de aguacate */
   color: #fff;
   border: none;
-  border-radius: 12px;
-  padding: 10px 20px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease;
 }
 
-boton:hover {
-  background-color: #8b6144; /* tono más oscuro al pasar el mouse */
-  transform: scale(1.03); /* leve efecto de presión */
-}
-
-boton:active {
-  transform: scale(0.97); /* sensación de clic real */
+.boton:hover {
+  background-color: #7a3e22;
 }
 
 /* ============================
