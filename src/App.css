@@ -3,8 +3,8 @@
    ============================ */
 
 :root {
-  --header-height: 60px;
-  --footer-height: 80px;
+  --header-height: 70px;
+  --footer-height: 120px;
   --color-aguacate: #b8d08c;
   --color-aguacate-hover: #a6c27d;
   --color-marfil: #faf8f0;
@@ -75,6 +75,7 @@ body {
    ============================ */
 
 .main {
+  margin-top: 25px;
   flex: 1;
   overflow-y: auto; /* scroll solo acá */
   padding: calc(var(--header-height) + 20px) 20px calc(var(--footer-height) + 20px);
@@ -98,8 +99,9 @@ body {
   background-color: var(--color-aguacate);
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
-  width: 4cm;
-  height: 2cm;
+  width: 25%;
+  height: 15%;
+  margin-bottom: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -108,11 +110,6 @@ body {
   font-weight: 500;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
-}
-
-.product-card:hover {
-  transform: scale(1.05);
-  background-color: var(--color-aguacate-hover);
 }
 
 .product-card h4 {
@@ -124,6 +121,27 @@ body {
 .product-card p {
   font-size: 0.8rem;
   margin: 0;
+}
+
+.boton {
+  background-color: #a67b5b; /* marrón claro semilla de aguacate */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+boton:hover {
+  background-color: #8b6144; /* tono más oscuro al pasar el mouse */
+  transform: scale(1.03); /* leve efecto de presión */
+}
+
+boton:active {
+  transform: scale(0.97); /* sensación de clic real */
 }
 
 /* ============================
@@ -153,10 +171,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
+  width: 110%;
   max-width: 1100px;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
 }
 
 .footer__left p,
