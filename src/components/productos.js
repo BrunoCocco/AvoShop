@@ -7,13 +7,13 @@ export const productos = [
   },
   {
     id: 2,
-    nombre: "Aceite de Oliva Virgen Extra",
+    nombre: "Oliva Virgen Extra",
     precio: 8.9,
     stock: 25,
   },
   {
     id: 3,
-    nombre: "Mix de Frutos Secos Naturales 250g",
+    nombre: "Frutos Secos 250g",
     precio: 4.5,
     stock: 50,
   },
@@ -31,19 +31,19 @@ export const productos = [
   },
   {
     id: 6,
-    nombre: "Harina de Avena Orgánica 1kg",
+    nombre: "Avena Orgánica 1kg",
     precio: 3.9,
     stock: 35,
   },
   {
     id: 7,
-    nombre: "Yogur Natural sin Azúcar 500ml",
+    nombre: "Yogur Natural 500ml",
     precio: 2.1,
     stock: 15,
   },
   {
     id: 8,
-    nombre: "Granola Casera con Semillas 300g",
+    nombre: "Granola Casera 300g",
     precio: 4.7,
     stock: 28,
   },
@@ -55,21 +55,20 @@ export const productos = [
   },
   {
     id: 10,
-    nombre: "Mantequilla de Maní Natural 350g",
+    nombre: "Mantequilla de Maní 350g",
     precio: 5.9,
     stock: 18,
   },
   {
     id: 11,
-    nombre: "Leche de Almendras sin Azúcar 1L",
+    nombre: "Leche de Almendras 1L",
     precio: 3.4,
     stock: 25,
   },
   {
     id: 12,
-    nombre: "Semillas de Chía Orgánicas 200g",
+    nombre: "Semillas de Chía 200g",
     precio: 2.8,
     stock: 40,
   },
-
 ];

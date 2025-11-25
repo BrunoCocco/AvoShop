@@ -11,6 +11,7 @@ function Footer() {
           <p>Palma de Mallorca, España</p>
         </div>
         <div className="footer__right">
+          <h2>Gracias Totales</h2>
           <p>
             Gracias por visitar <strong>AvoShop</strong> 🥑
           </p>
