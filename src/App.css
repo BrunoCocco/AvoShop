@@ -1,49 +1,35 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+/* ============================
+   ⚙️ VARIABLES GLOBALES
+   ============================ */
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+:root {
+  --header-height: 60px;
+  --footer-height: 80px;
+  --color-aguacate: #b8d08c;
+  --color-aguacate-hover: #a6c27d;
+  --color-marfil: #faf8f0;
 }
 
 /* ============================
-   🥑 HEADER – AvoShop
+   ⚙️ ESTRUCTURA GENERAL
    ============================ */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* evita scroll doble */
+  background-color: var(--color-marfil);
+  font-family: "Poppins", sans-serif;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+}
 
 /* ============================
    🥑 HEADER – AvoShop
@@ -54,14 +40,13 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 60px;
-  background-color: #b8d08c; /* aguacate claro */
+  height: var(--header-height);
+  background-color: var(--color-aguacate);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   z-index: 1000;
-  overflow: hidden; /* evita overflow del header */
 }
 
 .header__content {
@@ -78,20 +63,67 @@
 
 .header__title {
   font-size: 1.3rem;
-  color: #faf8f0; /* blanco marfil */
+  color: var(--color-marfil);
   margin: 0;
   font-weight: 600;
   letter-spacing: 0.5px;
   user-select: none;
 }
 
-/* Si el scroll viene del body, neutralizalo */
-html,
-body {
-  height: 100%;
+/* ============================
+   🧩 MAIN – Contenido visible y scrollable
+   ============================ */
+
+.main {
+  flex: 1;
+  overflow-y: auto; /* scroll solo acá */
+  padding: calc(var(--header-height) + 20px) 20px calc(var(--footer-height) + 20px);
+  box-sizing: border-box;
+  background-color: var(--color-marfil);
+  scroll-behavior: smooth; /* scroll suave */
+}
+
+/* ============================
+   🥑 PRODUCT LIST
+   ============================ */
+
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.product-card {
+  background-color: var(--color-aguacate);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  width: 4cm;
+  height: 2cm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-marfil);
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+  background-color: var(--color-aguacate-hover);
+}
+
+.product-card h4 {
+  font-size: 0.9rem;
   margin: 0;
-  padding: 0;
-  overflow: hidden; /* ❌ elimina el scroll */
+  text-align: center;
+}
+
+.product-card p {
+  font-size: 0.8rem;
+  margin: 0;
 }
 
 /* ============================
@@ -99,11 +131,14 @@ body {
    ============================ */
 
 .footer {
-  width: 100vw; /* 100% del viewport */
-  margin-left: calc(-50vw + 50%); /* anula centrado de #root o App */
-  background-color: #b8d08c; /* aguacate claro */
-  color: #faf8f0; /* blanco marfil */
-  padding: 20px 40px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--footer-height);
+  background-color: var(--color-aguacate);
+  color: var(--color-marfil);
+  padding: 15px 40px;
   font-size: 0.9rem;
   font-weight: 400;
   display: flex;
@@ -111,6 +146,7 @@ body {
   align-items: center;
   border-top: 2px solid rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  z-index: 999;
 }
 
 .footer__content {
@@ -139,7 +175,6 @@ body {
   text-align: right;
 }
 
-/* Responsive */
 @media (max-width: 600px) {
   .footer__content {
     flex-direction: column;
